@@ -9,12 +9,8 @@ import Grid from "@material-ui/core/Grid";
 import UseTodoState from "./hooks/UseTodoState";
 
 function ToDoApp(props){
-    const initialTodos=
-        JSON.parse(window.localStorage.getItem("todos")||"[]");
+    const initialTodos=[{id:1,task:"Complete Task",completed:false}]
     const{todos,addTodo,removeTodo,toggleTodo,editTodo}=UseTodoState(initialTodos);
-    useEffect(() => {
-        window.localStorage.setItem("todos",JSON.stringify(todos));
-    }, [todos]);
     return (
         <Paper
             style={{

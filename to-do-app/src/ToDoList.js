@@ -11,9 +11,7 @@ function ToDoList(props){
             <List>
                 {todos.map((todo,i) => (
                     <>
-                    <Todo task={todo.task} 
-                        key={todo.id} 
-                        id={todo.id}
+                    <Todo {...todo}
                         completed={todo.completed}
                         removeTodo={removeTodo}
                         toggleTodo={toggleTodo}
