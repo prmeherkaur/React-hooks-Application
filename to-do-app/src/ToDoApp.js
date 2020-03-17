@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import ToDoList from "./ToDoList";
+import ToDoForm from "./ToDoForm";
 import Paper from '@material-ui/core/Paper';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
@@ -12,6 +13,9 @@ function ToDoApp(props){
         {id: 3,task:"Complete Homework",completed:false}
     ]
     const [todos,setTodos]=useState(initialTodos);
+    const addTodo=newTodoText =>{
+        setTodos([...todos,{id:4, task:newTodoText, completed:false}]);
+    }
     return (
         <Paper
             style={{
@@ -27,6 +31,7 @@ function ToDoApp(props){
                     <Typography color="inherit">TO-DOs</Typography>
                 </Toolbar>
             </AppBar>
+            <ToDoForm addTodo={addTodo}/>
             <ToDoList todos={todos}/>
         </Paper>
     );
