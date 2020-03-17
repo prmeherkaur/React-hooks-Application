@@ -15,7 +15,7 @@ function ToDoForm(props){
             >
             <TextField value={value} onChange={handleChange}
             margin='normal'
-            label="Add New TO-DO"
+            label="Add New Task"
             fullWidth />
             </form> 
         </Paper>

@@ -29,6 +29,13 @@ function ToDoApp(props){
             ));
         setTodos(updatedTodos);
     }
+    const editTodo=(toDoId,newTask)=>{
+        const updatedTodos=todos.map(todo=>
+            (
+                (todo.id===toDoId)?{...todo,task:newTask}:todo
+            ));
+        setTodos(updatedTodos);
+    }
     return (
         <Paper
             style={{
@@ -47,7 +54,7 @@ function ToDoApp(props){
             <Grid container justify='center' style={{marginTop:"1rem"}}>
                 <Grid item xs={11} md={8} lg={4}>
                 <ToDoForm addTodo={addTodo}/>
-                <ToDoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo}/>
+                <ToDoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} editTodo={editTodo}/>
                 </Grid>
             </Grid>
         </Paper>
